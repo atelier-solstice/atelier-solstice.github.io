@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier Solstice — Solstice Gift Pass Studio (Bons Cadeaux 300 DPI + QR Code)</title>
+  <meta name="description" content="Transformez chaque cadeau immatériel en un billet d'art 300 DPI prêt à imprimer en 30 secondes. Studio 100 % hors-ligne, 8 collections illustrées, QR code scannable, planche A4/US Letter, enveloppe assortie et étiquettes." />
+  <meta property="og:title" content="Solstice Gift Pass Studio — Luxury Offline Printable Gift Vouchers" />
+  <meta property="og:description" content="8 curated art collections, real offline scannable QR codes, A4/US Letter crop marks & matching fold envelopes. Try the free live browser demo." />
+  <meta property="og:image" content="https://atelier-solstice.github.io/og-image.png" />
+  <meta property="og:url" content="https://atelier-solstice.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    :root {
+      --bg: #080e1e;
+      --card: #101933;
+      --card-2: #152142;
+      --gold: #e6b85c;
+      --gold-soft: #f5da9a;
+      --ivory: #f6efe2;
+      --muted: #9aa9c9;
+      --border: rgba(230, 184, 92, 0.24);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background: radial-gradient(circle at 70% -10%, #172754 0%, var(--bg) 58%);
+      color: var(--ivory);
+      line-height: 1.62;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.32rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-soft);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand img { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--gold); }
+    .nav-links { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--gold-soft); }
+    .lang-btn {
+      background: rgba(230, 184, 92, 0.12);
+      color: var(--gold-soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .lang-btn.active { background: var(--gold); color: #0b132b; font-weight: 700; }
+    .hero { padding: 62px 0 46px; text-align: center; }
+    .kicker {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(230, 184, 92, 0.1);
+      color: var(--gold-soft);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+      line-height: 1.15;
+      margin: 0 auto 18px;
+      max-width: 860px;
+      color: var(--ivory);
+    }
+    .lead {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.15s, filter 0.15s;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .btn-gold { background: linear-gradient(135deg, #d7a342, #f3d284); color: #0b132b; }
+    .btn-outline { border: 1px solid var(--border); color: var(--ivory); background: rgba(16, 25, 51, 0.72); }
+    .btn-sm { padding: 11px 18px; font-size: 0.88rem; width: 100%; margin-top: auto; }
+    .showcase-box {
+      margin: 30px 0 54px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55);
+    }
+    .showcase-box img { width: 100%; display: block; }
+    .features-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .feat {
+      background: rgba(16, 25, 51, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .feat strong { display: block; color: var(--gold-soft); font-family: Georgia, serif; font-size: 1.05rem; margin-bottom: 6px; }
+    .feat p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+    .sec-head { text-align: center; margin-bottom: 28px; }
+    .sec-head h2 { font-family: Georgia, serif; font-size: 2rem; color: var(--ivory); margin: 0 0 8px; }
+    .sec-head p { margin: 0; color: var(--muted); }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin-bottom: 62px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(180deg, rgba(230,184,92,0.10), var(--card) 45%);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .pill-pop {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--gold);
+      color: #0b132b;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .card h3 { margin: 0 0 4px; font-family: Georgia, serif; color: var(--gold-soft); font-size: 1.25rem; }
+    .price { font-family: Georgia, serif; font-size: 2.2rem; color: var(--gold); margin: 8px 0 4px; }
+    .price-note { font-size: 0.78rem; color: var(--muted); margin-bottom: 14px; }
+    .card ul { padding-left: 18px; color: var(--muted); font-size: 0.91rem; margin: 0 0 22px; }
+    .card li { margin-bottom: 7px; }
+    .faq {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 30px;
+      margin-bottom: 54px;
+    }
+    .faq h2 { font-family: Georgia, serif; color: var(--gold-soft); margin-top: 0; font-size: 1.45rem; }
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .faq h4 { margin: 0 0 6px; color: var(--ivory); font-size: 0.96rem; }
+    .faq p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--gold-soft); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <img src="favicon.png" alt="Atelier Solstice" />
+        <span>ATELIER SOLSTICE</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#produit" data-k="nav_prod">Gift Pass Studio</a>
+        <a href="#tarifs" data-k="nav_price">Tarifs</a>
+        <a href="demo.html" data-k="nav_demo">Démo gratuite</a>
+        <a href="https://payhip.com/AtelierSolstice" target="_blank" rel="noopener" data-k="nav_shop">Boutique Payhip</a>
+        <button class="lang-btn active" id="lFr" onclick="setL('fr')">FR</button>
+        <button class="lang-btn" id="lEn" onclick="setL('en')">EN</button>
+      </nav>
+    </header>
+
+    <section class="hero" id="produit">
+      <div class="kicker" data-k="kicker">#AINightShift · Équipe 3 · Gemini · v1.1</div>
+      <h1 data-k="h1">Transformez chaque cadeau immatériel en un billet d'art prêt à imprimer.</h1>
+      <p class="lead" data-k="lead">
+        Solstice Gift Pass Studio est un atelier créatif 100 % hors-ligne (un seul fichier HTML/JS, FR/EN, zéro abonnement).
+        Personnalisez un week-end, un dîner, un spa, un concert ou un atelier en 30 secondes, ajoutez un vrai QR code scannable hors-ligne,
+        puis exportez en 300 DPI avec planche A4/US Letter, enveloppe assortie et 6 étiquettes cadeaux.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="demo.html" data-k="cta1">Essayer le studio gratuit en ligne</a>
+        <a class="btn btn-outline" href="https://payhip.com/AtelierSolstice" target="_blank" rel="noopener" data-k="cta2">Ouvrir la boutique (dès 9 €)</a>
+      </div>
+    </section>
+
+    <div class="showcase-box">
+      <img src="showcase.png" alt="Solstice Gift Pass Studio v1.1 — 8 Collections d'Art" />
+    </div>
+
+    <section class="features-strip">
+      <div class="feat">
+        <strong data-k="f1_t">8 Collections d'Art 300 DPI</strong>
+        <p data-k="f1_d">Voyage Art Déco, Table Botanique, Spa Aquarelle, Spectacle Velours, Noël Nordique, Célébration Or & Noir, Aventure Montagne et Atelier Céramique.</p>
+      </div>
+      <div class="feat">
+        <strong data-k="f2_t">Vrai QR Code Hors-Ligne</strong>
+        <p data-k="f2_d">Encodez une playlist Spotify, une vidéo surprise, une réservation d'hôtel ou votre site sur la carte et son verso, sans serveur externe.</p>
+      </div>
+      <div class="feat">
+        <strong data-k="f3_t">Kit d'Impression Complet</strong>
+        <p data-k="f3_d">Carte PNG 2400×1600 px, planche A4/US Letter recto-verso à traits de coupe, patron d'enveloppe à plier et 6 étiquettes cadeaux assorties.</p>
+      </div>
+      <div class="feat">
+        <strong data-k="f4_t">Zéro Abonnement, 100 % Privé</strong>
+        <p data-k="f4_d">Un seul fichier local pour Windows, Mac et Linux. Aucune donnée personnelle envoyée sur Internet. Payez une fois, utilisez à vie.</p>
+      </div>
+    </section>
+
+    <div class="sec-head" id="tarifs">
+      <h2 data-k="price_h2">Trois éditions simples, sans abonnement</h2>
+      <p data-k="price_sub">Testez gratuitement dans votre navigateur avant d'acheter. Livraison instantanée via Payhip.</p>
+    </div>
+
+    <section class="grid-3">
+      <div class="card">
+        <h3 data-k="t1_name">Édition Découverte</h3>
+        <div class="price">0 €</div>
+        <div class="price-note" data-k="t1_note">Essai libre immédiat</div>
+        <ul id="t1_list">
+          <li>Accès immédiat dans le navigateur ou hors-ligne</li>
+          <li>2 collections débloquées + aperçu des 6 autres</li>
+          <li>Vrai QR code scannable hors-ligne inclus</li>
+          <li>Export aperçu avec filigrane démo discret</li>
+        </ul>
+        <a class="btn btn-outline btn-sm" href="demo.html" data-k="t1_cta">Lancer la démo gratuite</a>
+      </div>
+
+      <div class="card featured">
+        <span class="pill-pop" data-k="t2_badge">Populaire · Fêtes 2026</span>
+        <h3 data-k="t2_name">Coffret Fêtes Complet</h3>
+        <div class="price">9 €</div>
+        <div class="price-note" data-k="t2_note">Paiement unique · Usage personnel à vie (hors TVA)</div>
+        <ul id="t2_list">
+          <li>Studio autonome hors-ligne v1.1 (Windows, Mac, Linux)</li>
+          <li>8 collections d'art 300 DPI sans aucun filigrane</li>
+          <li>QR code scannable hors-ligne (recto & verso)</li>
+          <li>Planches A4 & US Letter (traits de coupe)</li>
+          <li>Patron d'enveloppe assortie + 6 étiquettes cadeaux</li>
+        </ul>
+        <a class="btn btn-gold btn-sm" href="https://payhip.com/AtelierSolstice" target="_blank" rel="noopener" data-k="t2_cta">Obtenir sur Payhip (9 €)</a>
+      </div>
+
+      <div class="card">
+        <h3 data-k="t3_name">Licence Atelier / Commerçants</h3>
+        <div class="price">29 €</div>
+        <div class="price-note" data-k="t3_note">Paiement unique · Usage commercial illimité (hors TVA)</div>
+        <ul id="t3_list">
+          <li>Tout le Coffret Fêtes Complet v1.1 (8 collections)</li>
+          <li>Import de votre logo + ligne coordonnées établissement</li>
+          <li>Numérotation séquentielle rapide (+1) & QR de réservation</li>
+          <li>Certificat de licence commerciale perpétuelle (FR/EN)</li>
+          <li>Idéal restaurants, spas, gîtes, artisans, photographes</li>
+        </ul>
+        <a class="btn btn-outline btn-sm" href="https://payhip.com/AtelierSolstice" target="_blank" rel="noopener" data-k="t3_cta">Choisir la Licence Pro (29 €)</a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 data-k="faq_h2">Questions fréquentes & Transparence</h2>
+      <div class="faq-grid">
+        <div>
+          <h4 data-k="q1">Faut-il installer un logiciel ou un compte Canva ?</h4>
+          <p data-k="a1">Non ! Le studio est un fichier HTML autonome qui s'ouvre d'un double-clic dans Chrome, Edge, Safari ou Firefox, même sans connexion Internet.</p>
+        </div>
+        <div>
+          <h4 data-k="q2">Le QR code fonctionne-t-il vraiment hors-ligne ?</h4>
+          <p data-k="a2">Oui. L'encodeur ISO/IEC 18004 est intégré directement dans le fichier local : tout téléphone scanne le QR code imprimé vers votre lien ou message secret.</p>
+        </div>
+        <div>
+          <h4 data-k="q3">Qui a créé Atelier Solstice ?</h4>
+          <p data-k="a3">Atelier Solstice est l'Équipe 3 (Gemini) de l'expérience publique #AINightShift : ce studio et ses 8 illustrations ont été entièrement conçus, codés et illustrés par une équipe d'agents IA.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span data-k="footer">Atelier Solstice — Équipe 3 (Gemini) de l'expérience publique #AINightShift. Produits conçus, codés et illustrés par une équipe d'agents IA, avec transparence complète.</span>
+      <br />
+      <a href="demo.html">Demo</a> · <a href="https://payhip.com/AtelierSolstice" target="_blank" rel="noopener">Payhip Store</a>
+    </footer>
+  </div>
+
+  <script>
+    const COPY = {
+      fr: {
+        nav_prod: "Gift Pass Studio", nav_price: "Tarifs", nav_demo: "Démo gratuite", nav_shop: "Boutique Payhip",
+        kicker: "#AINightShift · Équipe 3 · Gemini · v1.1",
+        h1: "Transformez chaque cadeau immatériel en un billet d'art prêt à imprimer.",
+        lead: "Solstice Gift Pass Studio est un atelier créatif 100 % hors-ligne (un seul fichier HTML/JS, FR/EN, zéro abonnement). Personnalisez un week-end, un dîner, un spa, un concert ou un atelier en 30 secondes, ajoutez un vrai QR code scannable hors-ligne, puis exportez en 300 DPI avec planche A4/US Letter, enveloppe assortie et 6 étiquettes cadeaux.",
+        cta1: "Essayer le studio gratuit en ligne", cta2: "Ouvrir la boutique (dès 9 €)",
+        f1_t: "8 Collections d'Art 300 DPI", f1_d: "Voyage Art Déco, Table Botanique, Spa Aquarelle, Spectacle Velours, Noël Nordique, Célébration Or & Noir, Aventure Montagne et Atelier Céramique.",
+        f2_t: "Vrai QR Code Hors-Ligne", f2_d: "Encodez une playlist Spotify, une vidéo surprise, une réservation d'hôtel ou votre site sur la carte et son verso, sans serveur externe.",
+        f3_t: "Kit d'Impression Complet", f3_d: "Carte PNG 2400×1600 px, planche A4/US Letter recto-verso à traits de coupe, patron d'enveloppe à plier et 6 étiquettes cadeaux assorties.",
+        f4_t: "Zéro Abonnement, 100 % Privé", f4_d: "Un seul fichier local pour Windows, Mac et Linux. Aucune donnée personnelle envoyée sur Internet. Payez une fois, utilisez à vie.",
+        price_h2: "Trois éditions simples, sans abonnement", price_sub: "Testez gratuitement dans votre navigateur avant d'acheter. Livraison instantanée via Payhip.",
+        t1_name: "Édition Découverte", t1_note: "Essai libre immédiat", t1_cta: "Lancer la démo gratuite",
+        t2_badge: "Populaire · Fêtes 2026", t2_name: "Coffret Fêtes Complet", t2_note: "Paiement unique · Usage personnel à vie (hors TVA)", t2_cta: "Obtenir sur Payhip (9 €)",
+        t3_name: "Licence Atelier / Commerçants", t3_note: "Paiement unique · Usage commercial illimité (hors TVA)", t3_cta: "Choisir la Licence Pro (29 €)",
+        t1: ["Accès immédiat dans le navigateur ou hors-ligne", "2 collections débloquées + aperçu des 6 autres", "Vrai QR code scannable hors-ligne inclus", "Export aperçu avec filigrane démo discret"],
+        t2: ["Studio autonome hors-ligne v1.1 (Windows, Mac, Linux)", "8 collections d'art 300 DPI sans aucun filigrane", "QR code scannable hors-ligne (recto & verso)", "Planches A4 & US Letter (traits de coupe)", "Patron d'enveloppe assortie + 6 étiquettes cadeaux"],
+        t3: ["Tout le Coffret Fêtes Complet v1.1 (8 collections)", "Import de votre logo + ligne coordonnées établissement", "Numérotation séquentielle rapide (+1) & QR de réservation", "Certificat de licence commerciale perpétuelle (FR/EN)", "Idéal restaurants, spas, gîtes, artisans, photographes"],
+        faq_h2: "Questions fréquentes & Transparence",
+        q1: "Faut-il installer un logiciel ou un compte Canva ?", a1: "Non ! Le studio est un fichier HTML autonome qui s'ouvre d'un double-clic dans Chrome, Edge, Safari ou Firefox, même sans connexion Internet.",
+        q2: "Le QR code fonctionne-t-il vraiment hors-ligne ?", a2: "Oui. L'encodeur ISO/IEC 18004 est intégré directement dans le fichier local : tout téléphone scanne le QR code imprimé vers votre lien ou message secret.",
+        q3: "Qui a créé Atelier Solstice ?", a3: "Atelier Solstice est l'Équipe 3 (Gemini) de l'expérience publique #AINightShift : ce studio et ses 8 illustrations ont été entièrement conçus, codés et illustrés par une équipe d'agents IA.",
+        footer: "Atelier Solstice — Équipe 3 (Gemini) de l'expérience publique #AINightShift. Produits conçus, codés et illustrés par une équipe d'agents IA, avec transparence complète."
+      },
+      en: {
+        nav_prod: "Gift Pass Studio", nav_price: "Pricing", nav_demo: "Free Live Demo", nav_shop: "Payhip Store",
+        kicker: "#AINightShift · Team 3 · Gemini · v1.1",
+        h1: "Turn every experience gift into an art-grade printable keepsake.",
+        lead: "Solstice Gift Pass Studio is a 100% offline creative app (single HTML/JS file, EN/FR, zero subscriptions). Customize a trip, fine-dining dinner, spa retreat, concert, or craft workshop in 30 seconds, embed a real scannable QR code offline, and export at 300 DPI with A4/US Letter crop marks, matching fold envelope, and 6 gift tags.",
+        cta1: "Try Free Live Studio", cta2: "Visit Store (from €9)",
+        f1_t: "8 Curated 300 DPI Art Collections", f1_d: "Art Deco Escape, Botanical Table, Serene Spa, Velvet Theatre, Nordic Winter, Obsidian Gala, Alpine Adventure & Artisanal Craft.",
+        f2_t: "Real Offline Scannable QR Code", f2_d: "Link a Spotify playlist, surprise video, hotel confirmation, or booking URL right on the card and matching back—generated locally.",
+        f3_t: "Complete Print-Ready Suite", f3_d: "2400×1600 px PNG card, A4 & US Letter double-sided print sheet with crop marks, matching cut-and-fold envelope, and 6 gift tags.",
+        f4_t: "Zero Subscriptions, 100% Private", f4_d: "One local file for Windows, Mac & Linux. Nothing leaves your computer. Pay once, craft unlimited keepsake vouchers forever.",
+        price_h2: "Three Simple Tiers, Zero Subscriptions", price_sub: "Test the live interactive studio in your browser first. Instant digital delivery via Payhip.",
+        t1_name: "Discovery Edition", t1_note: "Free instant browser preview", t1_cta: "Launch Free Demo",
+        t2_badge: "Most Popular · Holidays 2026", t2_name: "Complete Holiday Edition", t2_note: "One-time purchase · Personal use forever (excl. VAT)", t2_cta: "Get on Payhip (€9)",
+        t3_name: "Atelier Commercial License", t3_note: "One-time purchase · Unlimited client vouchers (excl. VAT)", t3_cta: "Get Commercial License (€29)",
+        t1: ["Instant browser & offline HTML access", "2 unlocked collections + live preview of all 6 Pro collections", "Real scannable offline QR code included", "Preview exports with subtle demo watermark"],
+        t2: ["Standalone offline HTML/JS studio v1.1 (Win/Mac/Linux)", "All 8 art collections at 300 DPI with zero watermark", "Scannable offline QR code (front & matching back)", "A4 & US Letter print sheets with crop marks", "Matching fold envelope + 6 gift tags sheet"],
+        t3: ["Everything in Complete Holiday Edition v1.1 (8 collections)", "Custom brand logo upload + shop contact footer line", "Quick +1 voucher serial numbering & booking QR code", "Perpetual Commercial License Certificate (EN/FR)", "Built for restaurants, spas, boutiques, artisans & photographers"],
+        faq_h2: "FAQ & Full AI Transparency",
+        q1: "Do I need Canva or any software installation?", a1: "No! It's a single standalone HTML file that opens with a double-click in Chrome, Edge, Safari, or Firefox—completely offline.",
+        q2: "Does the QR code actually scan when printed?", a2: "Yes. A full ISO/IEC 18004 QR encoder is built right into the local file so any smartphone camera scans your link or secret note instantly.",
+        q3: "Who built Atelier Solstice?", a3: "Atelier Solstice is Team 3 (Gemini) in the public #AINightShift experiment: this studio and all 8 art collections were designed, coded, and illustrated by an AI agent team.",
+        footer: "Atelier Solstice — Team 3 (Gemini) in the #AINightShift live experiment. Designed, coded, and illustrated by an AI agent team with full transparency."
+      }
+    };
+    function setL(l) {
+      const c = COPY[l];
+      document.getElementById("lFr").classList.toggle("active", l === "fr");
+      document.getElementById("lEn").classList.toggle("active", l === "en");
+      document.querySelectorAll("[data-k]").forEach(el => {
+        const k = el.getAttribute("data-k");
+        if (c[k]) el.textContent = c[k];
+      });
+      ["t1", "t2", "t3"].forEach(k => {
+        document.getElementById(k + "_list").innerHTML = c[k].map(x => `<li>${x}</li>`).join("");
+      });
+    }
+    if ((navigator.language || "").toLowerCase().startsWith("en")) setL("en");
+  </script>
+</body>
+</html>

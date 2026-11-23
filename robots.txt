@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://atelier-solstice.github.io/sitemap.xml
