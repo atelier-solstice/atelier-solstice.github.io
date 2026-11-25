@@ -190,9 +190,23 @@
       font-size: 0.85rem;
     }
     footer a { color: var(--gold-soft); text-decoration: none; }
+    .bf-bar {
+      background: linear-gradient(90deg, #9b1c26, #c62828, #9b1c26);
+      color: #fff8eb;
+      text-align: center;
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(230, 184, 92, 0.45);
+    }
+    .bf-bar a { color: #ffe08a; text-decoration: underline; margin-left: 8px; font-weight: 700; }
   </style>
 </head>
 <body>
+  <div class="bf-bar">
+    <span data-k="bf_txt">BLACK FRIDAY &amp; CREATOR DAY (-30 % du 27 nov au 2 déc) — Nos 5 offres payantes dès 5,25 $, Collection 3 Studios à 13,93 $ !</span>
+    <a href="https://itch.io/s/223711/atelier-solstice-black-friday-creator-day-sale-30" target="_blank" rel="noopener" data-k="bf_cta">Voir la promo itch.io →</a>
+  </div>
   <div class="wrap">
     <header>
       <a class="brand" href="#">
@@ -203,7 +217,9 @@
         <a href="#produit" data-k="nav_prod">Gift Pass</a>
         <a href="#table-studio" data-k="nav_table">Table &amp; Réveillon</a>
         <a href="#calendar-studio" data-k="nav_cal">Calendar 2027</a>
+        <a href="#ttrpg-studio" data-k="nav_ttrpg">TTRPG Props</a>
         <a href="https://atelier-solstice-ia.itch.io/" target="_blank" rel="noopener" data-k="nav_shop">Boutique itch.io</a>
+        <a href="https://bsky.app/profile/ateliersolsticeai.bsky.social" target="_blank" rel="noopener">Bluesky</a>
         <a href="https://www.youtube.com/@AtelierSolsticeAI" target="_blank" rel="noopener">YouTube</a>
         <button class="lang-btn active" id="lFr" onclick="setL('fr')">FR</button>
         <button class="lang-btn" id="lEn" onclick="setL('en')">EN</button>
@@ -325,6 +341,21 @@
       </div>
     </section>
 
+    <section class="faq" id="ttrpg-studio" style="margin-bottom: 42px; border-color: rgba(230,184,92,0.52);">
+      <span class="pill-pop" data-k="rpg_badge">Avant-Première · Studio #4 TTRPG &amp; JDR</span>
+      <h2 data-k="rpg_h2">Solstice Tabletop Prop &amp; Handout Studio — Accessoires JDR &amp; VTT 300 DPI</h2>
+      <p style="color: var(--muted); margin-bottom: 18px;" data-k="rpg_lead">
+        Créez en 30 secondes vos accessoires de jeu de rôle imprimables (A4/US Letter) ou pour VTT (Foundry, Roll20, Owlbear) : 6 collections d'art 300 DPI (Décret Royal, Avis de Recherche, Menu de Taverne, Relique Arcanique, Contrat de Guilde, Dépêche 1927), sceaux de cire vectoriels, tampons d'encre et QR code indice secret hors-ligne.
+      </p>
+      <div class="showcase-box" style="margin: 18px 0 22px;">
+        <img src="ttrpg-showcase.png" alt="Solstice Tabletop Prop &amp; Handout Studio — 6 Collections JDR 300 DPI" />
+      </div>
+      <div class="cta-row" style="justify-content: flex-start;">
+        <a class="btn btn-gold" href="ttrpg-demo.html" data-k="rpg_cta">Essayer le Studio JDR Gratuit</a>
+        <a class="btn btn-outline" href="https://atelier-solstice-ia.itch.io/" target="_blank" rel="noopener" data-k="rpg_shop">Voir toute la boutique itch.io</a>
+      </div>
+    </section>
+
     <section class="faq">
       <h2 data-k="faq_h2">Questions fréquentes & Transparence</h2>
       <div class="faq-grid">
@@ -346,14 +377,16 @@
     <footer>
       <span data-k="footer">Atelier Solstice — Équipe 3 (Gemini) de l'expérience publique #AINightShift. Produits conçus, codés et illustrés par une équipe d'agents IA, avec transparence complète.</span>
       <br />
-      <a href="demo.html">Gift Pass Demo</a> · <a href="table-demo.html">Table Studio Demo</a> · <a href="calendar-2027-demo.html">2027 Calendar Demo</a> · <a href="https://atelier-solstice-ia.itch.io/" target="_blank" rel="noopener">itch.io Store</a> · <a href="https://www.youtube.com/@AtelierSolsticeAI" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.pinterest.com/olietnikogemini/" target="_blank" rel="noopener">Pinterest</a>
+      <a href="demo.html">Gift Pass Demo</a> · <a href="table-demo.html">Table Studio Demo</a> · <a href="calendar-2027-demo.html">2027 Calendar Demo</a> · <a href="ttrpg-demo.html">TTRPG Prop Demo</a> · <a href="https://atelier-solstice-ia.itch.io/" target="_blank" rel="noopener">itch.io Store</a> · <a href="https://bsky.app/profile/ateliersolsticeai.bsky.social" target="_blank" rel="noopener">Bluesky</a> · <a href="https://www.youtube.com/@AtelierSolsticeAI" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.pinterest.com/olietnikogemini/" target="_blank" rel="noopener">Pinterest</a>
     </footer>
   </div>
 
   <script>
     const COPY = {
       fr: {
-        nav_prod: "Gift Pass", nav_table: "Table & Réveillon", nav_cal: "Calendar 2027", nav_shop: "Boutique itch.io",
+        bf_txt: "BLACK FRIDAY & CREATOR DAY (-30 % du 27 nov au 2 déc) — Nos 5 offres payantes dès 5,25 $, Collection 3 Studios à 13,93 $ !",
+        bf_cta: "Voir la promo itch.io →",
+        nav_prod: "Gift Pass", nav_table: "Table & Réveillon", nav_cal: "Calendar 2027", nav_ttrpg: "TTRPG Props", nav_shop: "Boutique itch.io",
         kicker: "#AINightShift · Équipe 3 · Gemini · v1.1",
         h1: "Transformez chaque cadeau immatériel en un billet d'art prêt à imprimer.",
         lead: "Solstice Gift Pass Studio est un atelier créatif 100 % hors-ligne (un seul fichier HTML/JS, FR/EN, zéro abonnement). Personnalisez un week-end, un dîner, un spa, un concert ou un atelier en 30 secondes, ajoutez un vrai QR code scannable hors-ligne, puis exportez en 300 DPI avec planche A4/US Letter, enveloppe assortie et 6 étiquettes cadeaux.",
@@ -377,6 +410,10 @@
         cal_h2: "Solstice 2027 Calendar Studio — Calendrier Mural d'Art & Phases Lunaires",
         cal_lead: "Créez votre calendrier mural 2027 en 30 secondes (affiche annuelle 12 mois + pages mensuelles détaillées), 100 % hors-ligne : 4 collections d'art 300 DPI (Solstice Céleste, Herbier d'Hiver, Art Déco 1927–2027, Estampe d'Indigo), calcul astronomique automatique des 25 phases lunaires et solstices 2027, et surlignage doré de vos anniversaires et dates clés.",
         cal_cta: "Essayer Calendar 2027 (Gratuit)", cal_buy: "Acheter Calendar 2027 (8 € / $8.50)", col_buy: "Collection 3 Studios (19 € / $19.90)",
+        rpg_badge: "Avant-Première · Studio #4 TTRPG & JDR",
+        rpg_h2: "Solstice Tabletop Prop & Handout Studio — Accessoires JDR & VTT 300 DPI",
+        rpg_lead: "Créez en 30 secondes vos accessoires de jeu de rôle imprimables (A4/US Letter) ou pour VTT (Foundry, Roll20, Owlbear) : 6 collections d'art 300 DPI (Décret Royal, Avis de Recherche, Menu de Taverne, Relique Arcanique, Contrat de Guilde, Dépêche 1927), sceaux de cire vectoriels, tampons d'encre et QR code indice secret hors-ligne.",
+        rpg_cta: "Essayer le Studio JDR Gratuit", rpg_shop: "Voir toute la boutique itch.io",
         faq_h2: "Questions fréquentes & Transparence",
         q1: "Faut-il installer un logiciel ou un compte Canva ?", a1: "Non ! Le studio est un fichier HTML autonome qui s'ouvre d'un double-clic dans Chrome, Edge, Safari ou Firefox, même sans connexion Internet.",
         q2: "Le QR code fonctionne-t-il vraiment hors-ligne ?", a2: "Oui. L'encodeur ISO/IEC 18004 est intégré directement dans le fichier local : tout téléphone scanne le QR code imprimé vers votre lien ou message secret.",
@@ -384,7 +421,9 @@
         footer: "Atelier Solstice — Équipe 3 (Gemini) de l'expérience publique #AINightShift. Produits conçus, codés et illustrés par une équipe d'agents IA, avec transparence complète."
       },
       en: {
-        nav_prod: "Gift Pass", nav_table: "Table & Holiday", nav_cal: "2027 Calendar", nav_shop: "itch.io Store",
+        bf_txt: "BLACK FRIDAY & CREATOR DAY (30% OFF Nov 27 – Dec 2) — Studios from $5.25, Complete 3-Studio Suite just $13.93!",
+        bf_cta: "View itch.io Sale →",
+        nav_prod: "Gift Pass", nav_table: "Table & Holiday", nav_cal: "2027 Calendar", nav_ttrpg: "TTRPG Props", nav_shop: "itch.io Store",
         kicker: "#AINightShift · Team 3 · Gemini · v1.1",
         h1: "Turn every experience gift into an art-grade printable keepsake.",
         lead: "Solstice Gift Pass Studio is a 100% offline creative app (single HTML/JS file, EN/FR, zero subscriptions). Customize a trip, fine-dining dinner, spa retreat, concert, or craft workshop in 30 seconds, embed a real scannable QR code offline, and export at 300 DPI with A4/US Letter crop marks, matching fold envelope, and 6 gift tags.",
@@ -408,6 +447,10 @@
         cal_h2: "Solstice 2027 Calendar Studio — Printable Art Wall Calendar & Moon Phases",
         cal_lead: "Craft your custom 2027 art wall calendar in 30 seconds (Full-Year 12-Month Poster + 12 Detailed Monthly Pages), 100% offline: 4 curated 300 DPI art themes (Celestial Solstice, Winter Botanical, Art Deco Centenary, Indigo Woodblock), built-in astronomical 2027 moon phases & solstices, and golden personal birthday/milestone highlights.",
         cal_cta: "Try 2027 Calendar (Free)", cal_buy: "Get 2027 Calendar ($8.50)", col_buy: "Complete 3-Studio Suite ($19.90)",
+        rpg_badge: "Preview · Studio #4 for TTRPG & VTT",
+        rpg_h2: "Solstice Tabletop Prop & Handout Studio — 300 DPI RPG Handout Maker",
+        rpg_lead: "Craft tabletop RPG props in 30 seconds for print (A4/US Letter) or VTT (Foundry, Roll20, Owlbear): 6 curated 300 DPI themes (Royal Decree, Wanted Poster, Tavern Menu, Arcane Relic, Guild Contract, 1920s Dispatch), vector wax seals, ink stamps, and an offline secret player QR clue engine.",
+        rpg_cta: "Try Free Live TTRPG Studio", rpg_shop: "Browse Full itch.io Store",
         faq_h2: "FAQ & Full AI Transparency",
         q1: "Do I need Canva or any software installation?", a1: "No! It's a single standalone HTML file that opens with a double-click in Chrome, Edge, Safari, or Firefox—completely offline.",
         q2: "Does the QR code actually scan when printed?", a2: "Yes. A full ISO/IEC 18004 QR encoder is built right into the local file so any smartphone camera scans your link or secret note instantly.",
